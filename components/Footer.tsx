@@ -1,41 +1,12 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import { SocialLink, SocialPlatform } from '../types';
 import { DouyinIcon, WeChatIcon, WeiboIcon, XiaohongshuIcon } from './CustomIcons';
-
-const socialLinks: SocialLink[] = [
-  {
-    platform: SocialPlatform.Weibo,
-    label: '贷略研习社',
-    url: '#',
-    iconPath: 'weibo'
-  },
-  {
-    platform: SocialPlatform.Douyin,
-    label: '贷略研习社',
-    url: '#',
-    iconPath: 'douyin'
-  },
-  {
-    platform: SocialPlatform.Xiaohongshu,
-    label: '贷略研习社',
-    url: '#',
-    iconPath: 'xhs'
-  },
-  {
-    platform: SocialPlatform.WeChatChannel,
-    label: '微信视频号',
-    url: '#',
-    iconPath: 'wechat'
-  },
-  {
-    platform: SocialPlatform.WeChatOfficial,
-    label: '微信公众号',
-    url: '#',
-    iconPath: 'wechat'
-  }
-];
+import SocialModal from './SocialModal';
 
 const Footer: React.FC = () => {
+  const [activePlatform, setActivePlatform] = useState<SocialPlatform | null>(null);
+
   return (
     <footer className="bg-navy-900 border-t border-white/10 pt-16 pb-8">
       <div className="container mx-auto px-6">
@@ -59,35 +30,50 @@ const Footer: React.FC = () => {
           <div className="col-span-1 md:col-span-3">
              <h3 className="text-white font-semibold mb-6">关注我们</h3>
              <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-                <div className="flex flex-col items-center group cursor-pointer">
+                <div 
+                  className="flex flex-col items-center group cursor-pointer"
+                  onClick={() => setActivePlatform(SocialPlatform.Weibo)}
+                >
                   <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white group-hover:bg-[#E6162D] group-hover:text-white transition-all duration-300">
                      <WeiboIcon className="w-6 h-6" />
                   </div>
                   <span className="mt-3 text-gray-400 text-sm group-hover:text-white">官方微博</span>
                 </div>
 
-                <div className="flex flex-col items-center group cursor-pointer">
+                <div 
+                  className="flex flex-col items-center group cursor-pointer"
+                  onClick={() => setActivePlatform(SocialPlatform.Douyin)}
+                >
                   <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white group-hover:bg-black group-hover:text-white transition-all duration-300">
                      <DouyinIcon className="w-6 h-6" />
                   </div>
                   <span className="mt-3 text-gray-400 text-sm group-hover:text-white">抖音</span>
                 </div>
 
-                <div className="flex flex-col items-center group cursor-pointer">
+                <div 
+                  className="flex flex-col items-center group cursor-pointer"
+                  onClick={() => setActivePlatform(SocialPlatform.Xiaohongshu)}
+                >
                   <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white group-hover:bg-[#FF2442] group-hover:text-white transition-all duration-300">
                      <XiaohongshuIcon className="w-6 h-6" />
                   </div>
                   <span className="mt-3 text-gray-400 text-sm group-hover:text-white">小红书</span>
                 </div>
 
-                <div className="flex flex-col items-center group cursor-pointer">
+                <div 
+                  className="flex flex-col items-center group cursor-pointer"
+                  onClick={() => setActivePlatform(SocialPlatform.WeChatChannel)}
+                >
                   <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white group-hover:bg-[#07C160] group-hover:text-white transition-all duration-300">
                      <WeChatIcon className="w-6 h-6" />
                   </div>
                   <span className="mt-3 text-gray-400 text-sm group-hover:text-white">微信视频号</span>
                 </div>
 
-                <div className="flex flex-col items-center group cursor-pointer">
+                <div 
+                  className="flex flex-col items-center group cursor-pointer"
+                  onClick={() => setActivePlatform(SocialPlatform.WeChatOfficial)}
+                >
                   <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white group-hover:bg-[#07C160] group-hover:text-white transition-all duration-300">
                      <WeChatIcon className="w-6 h-6" />
                   </div>
@@ -103,6 +89,12 @@ const Footer: React.FC = () => {
             </p>
         </div>
       </div>
+
+      <SocialModal 
+        isOpen={!!activePlatform} 
+        onClose={() => setActivePlatform(null)} 
+        platform={activePlatform} 
+      />
     </footer>
   );
 };
