@@ -43,7 +43,7 @@ const Hero: React.FC = () => {
 
           <div className="mt-12 grid grid-cols-3 gap-6 border-t border-white/10 pt-8">
             <div>
-              <div className="text-3xl font-bold text-white mb-1">5000+</div>
+              <div className="text-3xl font-bold text-white mb-1">1000+</div>
               <div className="text-gray-500 text-sm">学员成功上岸</div>
             </div>
             <div>
@@ -71,11 +71,11 @@ const Hero: React.FC = () => {
              <div className="space-y-4">
                 <div className="flex justify-between items-center p-4 bg-white/5 rounded-lg">
                    <span className="text-gray-400">原综合利息</span>
-                   <span className="text-red-400 font-mono line-through">18.5%</span>
+                   <span className="text-red-400 font-mono line-through">18-36%</span>
                 </div>
                 <div className="flex justify-between items-center p-4 bg-gold-500/10 border border-gold-500/20 rounded-lg">
                    <span className="text-gold-400 font-bold">优化后利息</span>
-                   <span className="text-gold-400 font-mono font-bold text-xl">3.2%</span>
+                   <span className="text-gold-400 font-mono font-bold text-xl">3%</span>
                 </div>
              </div>
           </div>
@@ -87,7 +87,7 @@ const Hero: React.FC = () => {
                </div>
                <div>
                   <div className="text-white font-bold">额度提升</div>
-                  <div className="text-gray-400 text-xs">+500,000 CNY</div>
+                  <div className="text-gray-400 text-xs">+300000-1000,000 CNY</div>
                </div>
              </div>
           </div>

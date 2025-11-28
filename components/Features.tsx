@@ -85,7 +85,7 @@ const Features: React.FC = () => {
                <div className="w-14 h-14 bg-purple-500/20 rounded-xl flex items-center justify-center mb-6 text-purple-400">
                  <Scale className="w-8 h-8" />
                </div>
-               <h3 className="text-xl font-bold text-white mb-3">征信优化修复</h3>
+               <h3 className="text-xl font-bold text-white mb-3">征信优化</h3>
                <p className="text-gray-400 text-sm leading-relaxed">
                  针对征信花、查询多、负债高的情况，提供合规合法的优化方案。养护优质征信，为低息融资打好基础。
                </p>
